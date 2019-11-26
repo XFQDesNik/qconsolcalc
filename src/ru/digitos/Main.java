@@ -10,16 +10,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
 	    Operations calcOperation = new Operations();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String operation = null;
-        String firstNumber = null;
-        String secondNumber = null;
+        String firstNumber = bufferedReader.readLine();
+        String operation = bufferedReader.readLine();
+        String secondNumber = bufferedReader.readLine();
+
+        if (Check.isNumeric(firstNumber) && Check.isNumeric(secondNumber)) {
+            calcOperation.firstNumber = Integer.parseInt(firstNumber);
+            calcOperation.secondNumber = Integer.parseInt(secondNumber);
+        } else System.out.println("Please enter numbers!");
 
 
-
-
-	    calcOperation.firstNumber = Integer.parseInt(bufferedReader.readLine());
-        operation = bufferedReader.readLine();
-	    calcOperation.secondNumber = Integer.parseInt(bufferedReader.readLine());
 
 	    switch (operation) {
             case "+": System.out.println(calcOperation.addition());
