@@ -14,38 +14,37 @@ public class Main {
         String operation = bufferedReader.readLine();
         String secondNumber = bufferedReader.readLine();
 
+
+
         if (Check.isNumeric(firstNumber) && Check.isNumeric(secondNumber)) {
             calcOperation.firstNumber = Integer.parseInt(firstNumber);
             calcOperation.secondNumber = Integer.parseInt(secondNumber);
 
-        } else System.out.println("Please enter numbers!");
+            switch (operation) {
+                case "+":
+                    System.out.println(calcOperation.addition());
+                    break;
+
+                case "-":
+                    System.out.println(calcOperation.difference());
+                    break;
+
+                case "/":
+                    if (Check.isNumeric(secondNumber)) {
+                        if (calcOperation.secondNumber == 0) {
+                            System.out.println("You can't divide by zero! Please enter a integer not equal to zero.");
+                        } else System.out.println(calcOperation.division());
+                    }
+                    break;
 
 
-
-        switch (operation) {
-            case "+":
-                System.out.println(calcOperation.addition());
-                break;
-
-            case "-":
-                System.out.println(calcOperation.difference());
-                break;
-
-            case "/":
-                if (Check.isNumeric(secondNumber)) {
-                    if (calcOperation.secondNumber == 0)
-                        System.out.println("You can't divide by zero! Please enter a number not equal to zero.");
-                    else System.out.println(calcOperation.division());
+                case "*":
+                    System.out.println(calcOperation.multiplication());
+                    break;
+                default:
+                    System.out.println("Invalid operation entered! Please enter the correct operation (+, -, /, *).");
+                    break;
             }
-            break;
-
-
-        case "*":
-        System.out.println(calcOperation.multiplication());
-        break;
-        default:
-        System.out.println("Invalid operation entered! Please enter the correct operation (+, -, /, *).");
-        break;
+        } else System.out.println("Please enter integer!");
     }
-}
 }

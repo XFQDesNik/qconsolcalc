@@ -13,7 +13,9 @@ public class Operations {
     }
 
     double division() {
-        return (double) firstNumber / (double) secondNumber;
+        if (((double) firstNumber / (double) secondNumber) % ((double) firstNumber / (double) secondNumber) == 0)
+            return firstNumber / secondNumber;
+        else return (double) firstNumber / (double) secondNumber;
     }
 
     int multiplication() {

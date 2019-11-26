@@ -6,7 +6,6 @@ public class Check {
             Integer.parseInt(numberString);
             return true;
         } catch (NumberFormatException numberException) {
-
             return false;
         }
     }
