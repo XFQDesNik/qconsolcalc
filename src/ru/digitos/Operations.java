@@ -12,8 +12,8 @@ public class Operations {
         return firstNumber - secondNumber;
     }
 
-    int division() {
-        return firstNumber / secondNumber;
+    double division() {
+        return (double) firstNumber / (double) secondNumber;
     }
 
     int multiplication() {
